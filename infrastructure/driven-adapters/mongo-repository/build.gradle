@@ -1,0 +1,20 @@
+dependencies {
+    implementation(project(":model"))
+    implementation(project(":usecase"))
+    implementation(project(":serializer"))
+
+    implementation("org.springframework.boot:spring-boot-starter-data-mongodb-reactive")
+    implementation("de.flapdoodle.embed:de.flapdoodle.embed.mongo:3.0.0")
+    implementation("org.reactivecommons.utils:object-mapper-api:0.1.0")
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.0'
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.0'
+
+
+
+    runtimeOnly("de.flapdoodle.embed:de.flapdoodle.embed.mongo") // TODO: remove this dependency to connect to real database
+    testImplementation("org.reactivecommons.utils:object-mapper:0.1.0")
+}
+
+repositories {
+    mavenCentral()
+}
